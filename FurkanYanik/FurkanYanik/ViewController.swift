@@ -87,7 +87,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let newLocation = locations.last else { return }
         
-        if let lastLocation = lastLocation, lastLocation.distance(from: newLocation) >= 1 {
+        if let lastLocation = lastLocation, lastLocation.distance(from: newLocation) >= 100 {
             addMarker(at: newLocation)
             userLocations.append(newLocation)
             saveUserLocations()
